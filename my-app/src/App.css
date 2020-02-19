@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.task-scratched {
+  color: red;
+  text-decoration: line-through;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

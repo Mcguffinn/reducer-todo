@@ -1,6 +1,6 @@
 export const initState = [
     {
-        item: 'Learn about reducers',
+        item: 'First task',
         completed: false,
         id: 3892987589
     },
@@ -16,6 +16,16 @@ export const todoReducer = (state, action) => {
                 id: Date.now()
             }
             return [...state, task]
+
+        case 'COMPLETED_TODO':
+            return state.map(e =>
+                e.id === action.id ? { ...e, completed: !e.completed } : e
+            );
+
+
+        case "REMOVE_TODO":
+            return state.filter(e => !e.completed);
+            
         default:
             return state;
     }
